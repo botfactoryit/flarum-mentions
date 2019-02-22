@@ -1,9 +1,9 @@
-Hey {!! $user->username !!}!
+Ciao {!! $user->username !!}!
 
-{!! $blueprint->reply->user->username !!} replied to your post (#{!! $blueprint->post->number !!}) in {!! $blueprint->post->discussion->title !!}.
+{!! $blueprint->reply->user->username !!} ha risposto a un tuo messaggio nella discussione "{!! $blueprint->post->discussion->title !!}".
 
 {!! app()->url() !!}/d/{!! $blueprint->reply->discussion_id !!}/{!! $blueprint->reply->number !!}
 
----
+--- {!! $blueprint->reply->user->username !!} ha scritto ---
 
 {!! $blueprint->reply->content !!}
