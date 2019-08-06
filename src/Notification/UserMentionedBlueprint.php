@@ -66,7 +66,7 @@ class UserMentionedBlueprint implements BlueprintInterface, MailableInterface
      */
     public function getEmailSubject()
     {
-        return "{$this->post->user->username} ti ha menzionato in \"{$this->post->discussion->title}\"";
+        return "{$this->post->user->display_name} ti ha menzionato in \"{$this->post->discussion->title}\"";
     }
 
     /**
