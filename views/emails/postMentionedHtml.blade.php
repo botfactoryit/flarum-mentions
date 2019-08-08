@@ -5,5 +5,5 @@ Ciao {!! $user->username !!}!
 <i>{!! $blueprint->post->discussion->title !!}</i></a>.
 <br><br>
 --- <i>{!! $blueprint->reply->user->username !!}</i> ha scritto ---
-<br>
-{!! $blueprint->reply->contentHtml !!}
+<br><br>
+{!! $blueprint->reply->content !!}
