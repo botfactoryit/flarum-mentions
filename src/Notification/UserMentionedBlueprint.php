@@ -57,7 +57,7 @@ class UserMentionedBlueprint implements BlueprintInterface, MailableInterface
      */
     public function getEmailView()
     {
-        return ['text' => 'flarum-mentions::emails.userMentioned'];
+        return ['text' => 'flarum-mentions::emails.userMentioned', 'html' => 'flarum-mentions::emails.userMentionedHtml'];
     }
 
     /**
@@ -65,10 +65,7 @@ class UserMentionedBlueprint implements BlueprintInterface, MailableInterface
      */
     public function getEmailSubject(TranslatorInterface $translator)
     {
-        return $translator->trans('flarum-mentions.email.user_mentioned.subject', [
-            '{mentioner_display_name}' => $this->post->user->display_name,
-            '{title}' => $this->post->discussion->title
-        ]);
+        return "{$this->post->user->display_name} ti ha menzionato in \"{$this->post->discussion->title}\"";
     }
 
     /**
